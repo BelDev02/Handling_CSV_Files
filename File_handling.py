@@ -1,4 +1,5 @@
 import csv
+
 ## write into CSV files 
 with open("Files.csv", "w", newline="") as files:
     write=csv.writer(files, delimiter=" ", quotechar="|")
@@ -16,6 +17,7 @@ with open("Files.csv", "r")as Files:
     readerD=csv.DictReader(Files, delimiter=" ", quotechar="|", quoting=csv.QUOTE_MINIMAL)
     for row in readerD:
         print(f"{row.get("Nom","")} {row.get("Prenom","") or "Indefine"}=>{row.get("Sexe") or "Indefine"}, {row.get("Age") or "Indefine"}")
+
 
 print("_"*64,"\n")
 
